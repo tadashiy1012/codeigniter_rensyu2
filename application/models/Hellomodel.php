@@ -10,4 +10,8 @@ class Hellomodel extends CI_Model {
     );
     return $data;
   }
+  function getFromDb() {
+    $query = $this->db->get('member');
+    return $query->result_array();
+  }
 }

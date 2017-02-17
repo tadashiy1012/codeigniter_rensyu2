@@ -10,7 +10,8 @@ class Hello extends CI_Controller {
         // );
         $this->load->model('Hellomodel');
         $data = $this->Hellomodel->getHello();
-        $this->load->view('helloview', $data);
+        $dbData = $this->Hellomodel->getFromDb();
+        $this->load->view('helloview', array('data' => $data, 'db' => $dbData);
     }
 
 }
