@@ -1,6 +1,13 @@
 <?php
 class Hello extends CI_Controller {
 
+    function __construct() {
+
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('name', 'name', 'required');
+    }
+
     public function index()
     {
         //echo 'Hello World!';
@@ -15,11 +22,8 @@ class Hello extends CI_Controller {
     }
 
     public function create() {
-        $this->load->helper('form');
         $this->load->helper('url');
-        $this->load->library('form_validation');
         $this->load->model('Hellomodel');
-        $this->form_validation->set_rules('name', 'name', 'required');
         if ($this->form_validation->run() === false) {
             echo redirect('/hello');
         } else {
