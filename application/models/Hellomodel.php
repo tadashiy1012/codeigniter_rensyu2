@@ -22,6 +22,6 @@ class Hellomodel extends CI_Model {
       'id' => $count,
       'name' => $this->input->post('name')
     );
-    return $query = $this->db->insert('menber', $data);
+    return $query = $this->db->insert('member', $data);
   }
 }
