@@ -7,5 +7,11 @@
   <code>
     <?php var_dump($db); ?>
   </code>
+  <hr />
+  <?php echo form_open('hello/create'); ?>
+    <label for="name">name</label>
+    <input type="input" name="name" /><br />
+    <input type="submit" name="submit" value="create member" />
+  </form>
 </body>
 </html>
