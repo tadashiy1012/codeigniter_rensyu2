@@ -16,7 +16,7 @@ class Hellomodel extends CI_Model {
     return $query->result_array();
   }
   function getFromDbOne($id) {
-    $query = $this->db->where('id', $id);
+    $query = $this->db->where('id', $id)->get();
     return $query->result();
   }
   function setHello() {
