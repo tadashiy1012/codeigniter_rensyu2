@@ -17,7 +17,7 @@ class Hellomodel extends CI_Model {
   }
   function getFromDbOne($id) {
     $query = $this->db->where('id', $id);
-    return $query->result_array();
+    return $query->result();
   }
   function setHello() {
     $count = $this->db->count_all('member');
