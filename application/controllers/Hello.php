@@ -23,10 +23,13 @@ class Hello extends CI_Controller {
         $this->load->helper('url');
         $this->load->model('Hellomodel');
         if ($this->form_validation->run() === false) {
-            echo redirect('/hello');
+            $data = $this->Hellomodel->getHello();
+            $this->load->view('helloview', $data);
+            $this->load->view('form', $data);
+            $this->load->view('helloview_footer', $data);
         } else {
             $this->Hellomodel->setHello();
-            echo redirect('/hello');
+            echo redirect('/hello/list');
         }
     }
 
