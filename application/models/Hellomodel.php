@@ -15,9 +15,13 @@ class Hellomodel extends CI_Model {
     $query = $this->db->get('member');
     return $query->result_array();
   }
+  function getFromDbOne($id) {
+    $query = $this->db->where('id', $id);
+    return $query->result_array();
+  }
   function setHello() {
     $count = $this->db->count_all('member');
-    $count = $count += 1;
+    $count = $count + 1;
     $data = array(
       'id' => $count,
       'name' => $this->input->post('name')
