@@ -8,6 +8,15 @@ class Hello extends CI_Controller {
         $this->load->view('helloview_footer', $data);
     }
 
+    public function list() {
+        $this->load->model('Hellomodel');
+        $data = $this->Hellomodel->getHello();
+        $db = $this->Hellomodel->getFromDb();
+        $this->load->view('helloview', $data);
+        $this->load->view('dbout', $db);
+        $this->load->view('helloview_footer', $data);
+    }
+
     public function create() {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('name', 'name', 'required');
