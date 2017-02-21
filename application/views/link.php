@@ -1,4 +1,4 @@
 <ul>
-  <li><a href="/list">list</a></li>
-  <li><a href="/create">create</a></li>
+  <li><a href="./hello/list">list</a></li>
+  <li><a href="/~vagrant/codeigniter_rensyu2/index.php/hello/create">create</a></li>
 </ul>
