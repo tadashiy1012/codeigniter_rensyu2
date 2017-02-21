@@ -5,6 +5,7 @@ class Hello extends CI_Controller {
         $this->load->model('Hellomodel');
         $data = $this->Hellomodel->getHello();
         $this->load->view('helloview', $data);
+        $this->load->view('link', $data);
         $this->load->view('helloview_footer', $data);
     }
 
