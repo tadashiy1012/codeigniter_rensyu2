@@ -15,6 +15,7 @@ class Hello extends CI_Controller {
         $db = $this->Hellomodel->getFromDb();
         $this->load->view('helloview', $data);
         $this->load->view('dbout', array('db' => $db));
+        $this->load->view('list', array('db' => $db));
         $this->load->view('helloview_footer', $data);
     }
 
