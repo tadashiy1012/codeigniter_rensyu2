@@ -44,7 +44,7 @@ class Hello extends CI_Controller {
         }
         $this->load->view('helloview', $data);
         $this->load->view('dbout', array('db' => $item));
-        $this->load->view('read', array('item' => $item[0]));
+        //$this->load->view('read', array('item' => $item[0]));
         $this->load->view('helloview_footer', $data);
     }
 
