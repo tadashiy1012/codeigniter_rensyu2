@@ -17,7 +17,6 @@ class Hello extends CI_Controller {
         $this->load->view('helloview', $data);
         $this->load->view('dbout', array('db' => $db));
         $this->load->view('list', array('db' => $db));
-        $this->load->view('search', $data);
         $this->load->view('helloview_footer', $data);
     }
 
@@ -47,7 +46,6 @@ class Hello extends CI_Controller {
         $this->load->view('helloview', $data);
         $this->load->view('dbout', array('db' => $item));
         $this->load->view('read', array('item' => $item));
-        $this->load->view('search', $data);
         $this->load->view('helloview_footer', $data);
     }
 
