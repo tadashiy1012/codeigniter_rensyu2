@@ -53,7 +53,7 @@ class Hello extends CI_Controller {
 
     public function search() {
         $id = $this->input->post('inId');
-        if (empty($id)) {
+        if (empty($id) || !is_int($id)) {
             show_404();
         }
         $this->load->helper('url');
