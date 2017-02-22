@@ -56,6 +56,7 @@ class Hello extends CI_Controller {
         if (empty($id)) {
             show_404();
         }
+        $this->load->helper('url');
         echo redirect('/hello/read/' . $id);
     }
 
