@@ -6,6 +6,7 @@ class Hello extends CI_Controller {
         $data = $this->Hellomodel->getHello();
         $this->load->view('helloview', $data);
         $this->load->view('link', $data);
+        $this->load->view('search', $data);
         $this->load->view('helloview_footer', $data);
     }
 
@@ -16,6 +17,7 @@ class Hello extends CI_Controller {
         $this->load->view('helloview', $data);
         $this->load->view('dbout', array('db' => $db));
         $this->load->view('list', array('db' => $db));
+        $this->load->view('search', $data);
         $this->load->view('helloview_footer', $data);
     }
 
@@ -45,7 +47,16 @@ class Hello extends CI_Controller {
         $this->load->view('helloview', $data);
         $this->load->view('dbout', array('db' => $item));
         $this->load->view('read', array('item' => $item));
+        $this->load->view('search', $data);
         $this->load->view('helloview_footer', $data);
+    }
+
+    public function search() {
+        $id = $this->input->post('inId');
+        if (empty($id)) {
+            show_404();
+        }
+        echo redirect('/hello/read/' . $id);
     }
 
 }
