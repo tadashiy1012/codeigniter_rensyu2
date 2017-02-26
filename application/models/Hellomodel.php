@@ -28,4 +28,7 @@ class Hellomodel extends CI_Model {
     );
     return $query = $this->db->insert('member', $data);
   }
+  function deleteHello($id) {
+    $this->db->delete('member', array('id' => $id));
+  }
 }
