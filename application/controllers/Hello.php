@@ -62,6 +62,7 @@ class Hello extends CI_Controller {
         if (empty($id) || !ctype_digit($id)) {
             show_404();
         }
+        $this->load->model('Hellomodel');
         $this->Hellomodel->deleteHello($id);
         $this->load->helper('url');
         echo redirect('/hello/list');
