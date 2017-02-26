@@ -58,8 +58,7 @@ class Hello extends CI_Controller {
         echo redirect('/hello/read/' . $id);
     }
 
-    public function delete() {
-        $id = $this->input->post('inId');
+    public function delete($id) {
         if (empty($id) || !ctype_digit($id)) {
             show_404();
         }
