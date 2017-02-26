@@ -53,3 +53,4 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['hello/read/(:any)'] = 'hello/read/$1';
+$route['hello/delete/(:any)'] = 'hello/delete/$1';
